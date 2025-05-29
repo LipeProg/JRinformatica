@@ -4,37 +4,38 @@ import emailjs from 'emailjs-com';
 
 export default function QuemSomos() {
   const [email, setEmail] = useState('');
-  const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState('');
+  const [enviado, setEnviado] = useState(false);
+  const [erro, setErro] = useState('');
 
-  const handleSubmit = (e) => {
+  const enviarFormulario = (e) => {
     e.preventDefault();
-    setError('');
+    setErro('');
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      setError('Por favor, insira um e-mail válido.');
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!regexEmail.test(email)) {
+      setErro('Por favor, insira um e-mail válido.');
       return;
     }
 
     // Enviar usando EmailJS
     emailjs.send(
       'service_z0b91bd',
-      'template_3g989ls', 
-      { user_email: email,
-        name: 'Possivel cliente',
-        message:'é um teste de envio de email'  // Mensagem opcional,
+      'template_3g989ls',
+      {
+        user_email: email,
+        name: 'Possível cliente',
+        message: 'é um teste de envio de email' // Mensagem opcional
       },
       '7FpaDuoeCjlJmprck'
     )
-    .then(() => {
-      setSubmitted(true);
-      setEmail('');
-    })
-    .catch((error) => {
-      setError('Erro ao enviar. Tente novamente mais tarde.');
-      console.error('Erro no envio:', error);
-    });
+      .then(() => {
+        setEnviado(true);
+        setEmail('');
+      })
+      .catch((error) => {
+        setErro('Erro ao enviar. Tente novamente mais tarde.');
+        console.error('Erro no envio:', error);
+      });
   };
 
   return (
@@ -56,7 +57,7 @@ export default function QuemSomos() {
             que transformam processos e otimizam resultados...
           </Typography>
 
-          <Box component="form" onSubmit={handleSubmit} noValidate>
+          <Box component="form" onSubmit={enviarFormulario} noValidate>
             <Typography variant="h6" sx={{ mb: 2 }}>
               Entre em contato conosco:
             </Typography>
@@ -69,8 +70,8 @@ export default function QuemSomos() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              error={!!error}
-              helperText={error}
+              error={!!erro}
+              helperText={erro}
               sx={{
                 mb: 3,
                 input: { color: '#fff' },
@@ -99,11 +100,11 @@ export default function QuemSomos() {
             </Button>
           </Box>
 
-          {submitted && (
+          {enviado && (
             <Alert
               severity="success"
               sx={{ mt: 3 }}
-              onClose={() => setSubmitted(false)}
+              onClose={() => setEnviado(false)}
             >
               E-mail enviado com sucesso! Entraremos em contato em breve.
             </Alert>
