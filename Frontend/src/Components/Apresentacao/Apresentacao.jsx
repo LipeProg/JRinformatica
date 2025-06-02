@@ -7,7 +7,7 @@ export default function Apresentacao() {
     <Box
       sx={{
         width: '100%',
-        height: { xs: 'auto', md: 450 },
+        height: { xs: 'auto', md: 'auto' },
         backgroundColor: '#003366',
         color: '#fff',
         py: { xs: 10, md:12},
