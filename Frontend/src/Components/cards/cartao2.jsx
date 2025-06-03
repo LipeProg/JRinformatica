@@ -31,7 +31,11 @@ const ExpandirMais = styled(IconButton, {
 const CartaoInfo2 = ({ id, titulo, imagem, descricao, conteudoExpandido, expandido, aoClicarExpandir }) => {
   return (
     <Grid item xs={12} sm={6} sx={{justifyContent: 'center', mb: 10, mr: { xs: 0, sm: 40 } }}>
-      <Cartao sx={{ width: '500px', backgroundColor: '#043873' }}>
+      <Cartao       
+      sx={{ width: '100%',
+            maxWidth: 500,
+            backgroundColor: '#043873' 
+          }}>
         <CabecalhoCartao title={titulo} sx={{ color: '#fff' }} />
         <ImagemCartao component="img" height="194" image={imagem} />
         <ConteudoCartao>

@@ -32,7 +32,11 @@ const CartaoInfo = ({ id, titulo, imagem, descricao, conteudoExpandido, expandid
   return (
     <Grid item xs={12} sm={6} sx={{justifyContent: 'center', mb: 10, mr: { xs: 0, sm: 40 } }}>
       
-      <Cartao sx={{ width: '500px', backgroundColor: '#043873' }}>
+      <Cartao 
+      sx={{ width: '100%',
+            maxWidth: 500,
+            backgroundColor: '#043873' 
+          }}>
        
         <CabecalhoCartao title={titulo} sx={{ color: '#fff' }} />
        

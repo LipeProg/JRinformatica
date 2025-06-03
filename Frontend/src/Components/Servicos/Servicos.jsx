@@ -23,37 +23,43 @@ export default function Servicos() {
         sx={{ backgroundColor: '#fff',
               padding: 2,
               width: '100%',
-              scrollMarginTop: '80px'
+              scrollMarginTop: '80px',
+              px: { xs: 2, md: 10 },
+              py: { xs: 6, md: 10 },
            }}
       >
-        <CartaoInfo
-          id={1}
-          titulo="Automação de Processos"
-          imagem="/static/images/cards/paella.jpg"
-          descricao="Lorem ipsum dolor sit, amet consectetur adipisicing elit..."
-          conteudoExpandido={[
-            "Texto expandido 1",
-            "Texto expandido 2",
-          ]}
-          expandido={expandidoId === 1}
-          aoClicarExpandir={() => handleExpandir(1)}
-        />
+        <Grid item xs={12} sm={10} md={6} lg={5} xl={4}>
+          <CartaoInfo
+            id={1}
+            titulo="Automação de Processos"
+            imagem="/static/images/cards/paella.jpg"
+            descricao="Lorem ipsum dolor sit, amet consectetur adipisicing elit..."
+            conteudoExpandido={[
+              "Texto expandido 1",
+              "Texto expandido 2",
+            ]}
+            expandido={expandidoId === 1}
+            aoClicarExpandir={() => handleExpandir(1)}
+          />
+        </Grid>
 
 
-        <CartaoInfo2
-          id={2}
-          titulo="Outra Automação"
-          imagem="/static/images/cards/paella.jpg"
-          descricao="Lorem ipsum dolor sit, amet consectetur adipisicing elit..."
-          conteudoExpandido={[
-            "Texto expandido 1",
-            "Texto expandido 2...",
-            "Texto expandido 3...",
-            "Texto expandido 4...",
-          ]}
-          expandido={expandidoId === 2}
-          aoClicarExpandir={() => handleExpandir(2)}
-        />
+        <Grid item xs={12} sm={10} md={6} lg={5} xl={4}>
+          <CartaoInfo2
+            id={2}
+            titulo="Outra Automação"
+            imagem="/static/images/cards/paella.jpg"
+            descricao="Lorem ipsum dolor sit, amet consectetur adipisicing elit..."
+            conteudoExpandido={[
+              "Texto expandido 1",
+              "Texto expandido 2...",
+              "Texto expandido 3...",
+              "Texto expandido 4...",
+            ]}
+            expandido={expandidoId === 2}
+            aoClicarExpandir={() => handleExpandir(2)}
+          />
+        </Grid>
       </Grid>
     </Container>
   );
