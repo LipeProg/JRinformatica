@@ -8,14 +8,16 @@ function Header() {
 
       <Toolbar sx={{ justifyContent: 'space-between' }}>
         {/* Logo */}
-        <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
-          JR <span style={{ color: '#ffffffaa' }}>Informatica</span>
-        </Typography>
+        <a href="#apresentacao" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+            JR <span style={{ color: '#ffffffaa' }}>Informatica</span>
+          </Typography>
+        </a>
 
         {/* Links */}
         <Box sx={{ display: 'flex', gap: 3 }}>
-          <Button color="inherit">Serviços</Button>
-          <Button color="inherit">Sobre nós</Button>
+          <Button component="a" href="#servicos" color="inherit">Serviços</Button>
+          <Button component="a" href="#quemsou" color="inherit">Sobre nós</Button>
         </Box>
 
         {/* Botão de contato */}
@@ -30,7 +32,7 @@ function Header() {
             },
           }}
         >
-          Contate-nos →
+          Contato →
         </Button>
       </Toolbar>
     </AppBar>

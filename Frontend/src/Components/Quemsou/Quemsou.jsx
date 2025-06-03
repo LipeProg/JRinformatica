@@ -40,6 +40,7 @@ export default function QuemSomos() {
 
   return (
     <Box
+      id="quemsou"
       sx={{
         px: { xs: 2, md: 10 },
         py: { xs: 6, md: 10 },
