@@ -14,12 +14,17 @@ export default function Servicos() {
   };
 
   return (
-    <Container id='servicos' maxWidth={false} sx={{ padding: 0 }}>
+    <Container maxWidth={false} sx={{ padding: 0 }}>
       <Grid
+        id="servicos"
         container
         spacing={2}
         justifyContent="center"
-        sx={{ backgroundColor: '#fff', padding: 2, width: '100%' }}
+        sx={{ backgroundColor: '#fff',
+              padding: 2,
+              width: '100%',
+              scrollMarginTop: '80px'
+           }}
       >
         <CartaoInfo
           id={1}
